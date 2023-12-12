@@ -76,8 +76,6 @@ const deleteTransaction = (id) => {
 
   toast.success("Transaction has been deleted");
 };
-
-localStorage.setItem("transactions", transactions);
 </script>
 
 <style lang="css" scoped></style>
