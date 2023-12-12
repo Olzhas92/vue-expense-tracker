@@ -5,7 +5,7 @@
       <Balance :total="total" />
       <IncomeExpenses :income="+income" :expense="+expense" />
       <TransactionList :transactions="transactions" />
-      <AddTransaction />
+      <AddTransaction @transactionSubmitted="transactionSubmitted" />
     </div>
   </div>
 </template>
@@ -50,7 +50,19 @@ const expense = computed(() => {
     .toFixed(2);
 });
 
-console.log(expense.value);
+const transactionSubmitted = (newTransaction) => {
+  const transactionData = {
+    id: generateUniqueID(),
+    text: newTransaction.text,
+    amount: newTransaction.amount,
+  };
+
+  transactions.value.push(transactionData);
+};
+
+function generateUniqueID() {
+  return Math.floor(Math.random() * 1000000);
+}
 </script>
 
 <style lang="css" scoped></style>
