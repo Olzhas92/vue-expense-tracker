@@ -4,4 +4,8 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+h2 {
+  padding: 0 16px;
+}
+</style>
