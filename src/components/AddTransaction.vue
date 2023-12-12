@@ -34,7 +34,6 @@ const toast = useToast();
 
 const onSubmit = () => {
   if (text.value && amount.value) {
-    toast.success("Transaction has been added");
     const newTransaction = {
       text: text.value,
       amount: parseFloat(amount.value),

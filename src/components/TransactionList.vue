@@ -7,7 +7,7 @@
       :class="item.amount > 0 ? 'plus' : 'minus'"
     >
       {{ item.text }} <span>${{ item.amount }}</span
-      ><button class="delete-btn">x</button>
+      ><button class="delete-btn" @click="deleteTransaction(item.id)">x</button>
     </li>
   </ul>
 </template>
@@ -16,6 +16,12 @@
 const props = defineProps({
   transactions: { type: Array, required: true },
 });
+
+const emit = defineEmits(["deleteTransaction"]);
+
+const deleteTransaction = (id) => {
+  emit("deleteTransaction", id);
+};
 </script>
 
 <style lang="css" scoped></style>
