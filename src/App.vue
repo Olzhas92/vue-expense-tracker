@@ -1,9 +1,19 @@
 <template>
   <div>
-    <h1>Hello World!</h1>
+    <Header />
+    <div class="container">
+      <Balance />
+      <IncomeExpenses />
+      <TransactionList />
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Header from "./components/Header.vue";
+import Balance from "./components/Balance.vue";
+import IncomeExpenses from "./components/IncomeExpenses.vue";
+import TransactionList from "./components/TransactionList.vue";
+</script>
 
 <style lang="scss" scoped></style>
